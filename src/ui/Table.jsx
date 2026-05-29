@@ -85,12 +85,13 @@ const Header = ({ children }) => {
 };
 
 const Body = ({ data, render }) => {
-  if (!data.length) return <Empty>There is no data at the moment.</Empty>;
+  if (!data?.length) return <Empty>There is no data at the moment.</Empty>;
   return <StyledBody>{data.map(render)}</StyledBody>;
 };
 
 Table.Row = Row;
 Table.Header = Header;
 Table.Body = Body;
+Table.Footer = Footer;
 
 export default Table;

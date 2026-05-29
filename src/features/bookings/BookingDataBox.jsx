@@ -128,7 +128,6 @@ function BookingDataBox({ booking }) {
             {numNights} nights in Cabin <span>{cabinName}</span>
           </p>
         </div>
-
         <p>
           {format(new Date(startDate), "EEE, MMM dd yyyy")} (
           {isToday(new Date(startDate))
@@ -136,6 +135,14 @@ function BookingDataBox({ booking }) {
             : formatDistanceFromNow(startDate)}
           ) &mdash; {format(new Date(endDate), "EEE, MMM dd yyyy")}
         </p>
+
+        {/* <p>
+          {format(new Date(startDate), "EEE, MMM dd yyyy")} (
+          {isToday(new Date(startDate))
+            ? "Today"
+            : formatDistanceFromNow(startDate)}
+          ) &mdash; {format(new Date(endDate), "EEE, MMM dd yyyy")}
+        </p> */}
       </Header>
 
       <Section>
@@ -153,13 +160,13 @@ function BookingDataBox({ booking }) {
         {observations && (
           <DataItem
             icon={<HiOutlineChatBubbleBottomCenterText />}
-            label="Observations"
+            label='Observations'
           >
             {observations}
           </DataItem>
         )}
 
-        <DataItem icon={<HiOutlineCheckCircle />} label="Breakfast included?">
+        <DataItem icon={<HiOutlineCheckCircle />} label='Breakfast included?'>
           {hasBreakfast ? "Yes" : "No"}
         </DataItem>
 
@@ -169,7 +176,7 @@ function BookingDataBox({ booking }) {
 
             {hasBreakfast &&
               ` (${formatCurrency(cabinPrice)} cabin + ${formatCurrency(
-                extrasPrice
+                extrasPrice,
               )} breakfast)`}
           </DataItem>
 
